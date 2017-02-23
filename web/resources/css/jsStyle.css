@@ -1,0 +1,59 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jun 28, 2016, 3:18:54 PM
+    Author     : Vladimir
+*/
+.animate {
+    position: relative;
+    -webkit-animation-name: animateleft;
+    -webkit-animation-duration: 2s;
+    animation-name: animateleft;
+    animation-duration: 2s;
+}
+@-webkit-keyframes animateleft {
+    from { left:-50px; opacity:0; }
+    to {left:0px; opacity:1; }
+}
+@keyframes animateleft {
+    from{left:-50px;opacity:0;} 
+    to{left:0; opacity:1;}
+}
+
+.animate-bottom {
+    position: relative;
+    -webkit-animation-name: animatebottom;
+    -webkit-animation-duration: 2s;
+    animation-name: animatebottom;
+    animation-duration: 2s;
+}
+@-webkit-keyframes animatebottom {
+    from { bottom:-50px; opacity:0; }
+    to {bottom:0px; opacity:1; }
+}
+@keyframes animatebottom {
+    from{bottom:-50px;opacity:0;} 
+    to{bottom:0; opacity:1;}
+}
+.neuspeh {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+
+.uspeh {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: #31708f;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+}

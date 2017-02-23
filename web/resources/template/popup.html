@@ -1,0 +1,20 @@
+<div class="popupProzor" data-popup="popup-1">
+    <div class="popupUnutrasnji">
+        <img height="175px" width="150px" class="logo" src="<c:url value="/resources/images/${user.getKorisnikPodaci().getSlika()}" />" alt="slika">
+             <div style="margin-left: 200px;">
+            <h3><spring:message code="newName"/>${user.getKorisnikPodaci().getIme()}</h3>
+            <h3><spring:message code="newLastname"/>${user.getKorisnikPodaci().getPrezime()}</h3>
+            <h3><spring:message code="newNumber"/>${user.getKorisnikPodaci().getBrojTelefona()}</h3>
+            <h3><spring:message code="newEmail"/>${user.getKorisnikPodaci().getEmail()}</h3>
+            <form action="pictureUpload" method="POST" enctype="multipart/form-data">
+                <input type="hidden" name="korisnik" value="${user.getKorisnickoIme()}">
+                <input type="file" name="photo" />
+                <input type="submit" value="upload" />
+                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+            </form>
+        </div>
+        <a class="popupZatvori" data-popup-close="popup-1" href="#">x</a>
+        <!--                <br>
+                        <p><a data-popup-close="popup-1" href="#">Close</a></p>-->
+    </div>
+</div>

@@ -1,0 +1,62 @@
+<div id="hederDiv">
+    <img class="logo" src="resources/images/logo.png" alt="logo">
+    <div id="localNalog">
+        <div id="local">
+            <h5>
+                <spring:message code="chooselanguage"/>&nbsp;&nbsp;
+                <a href="?lang=sr">SRP</a> | 
+                <a href="?lang=en">ENG</a>
+            </h5>
+        </div>
+        <div id="nalog">
+            <div id="settings">
+                <a href="" data-popup-open="popup-1"><i class="fa fa-cog" aria-hidden="true"></i></a>
+            </div>
+            <c:url value="/j_spring_security_logout" var="logoutUrl" />
+            <form action="${logoutUrl}" method="post">
+                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+                <input type="submit" value="<spring:message code="logout"/>" id="logout" />
+            </form>
+        </div>
+    </div>
+</div>
+<!-- start header -->
+<header>
+    <div class="container">
+        <div class="navbar navbar-static-top">
+            <div class="navigation">
+                <nav>
+                    <ul class="nav topnav bold">
+                        <li class="dropdown active">
+                            <a href="pocetna"><spring:message code="mypage"/></a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#"><spring:message code="accounts"/><i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                            <ul style="display: none;" class="dropdown-menu bold">
+                                <li><a href=""><spring:message code="checkings"/></a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#"><spring:message code="transfers"/><i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                            <ul class="dropdown-menu bold">
+                                <li><a href="uplatnica"><spring:message code="payments"/></a></li>
+                                <li><a href="transferi"><spring:message code="transfers"/></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><spring:message code="paymentcards"/></a>
+                        </li>
+                        <li>
+                            <a href="krediti"><spring:message code="loans"/></a>
+                        </li>
+                        <!--                        <li>
+                                                    <a href="#"><spring:message code="contacts"/></a>
+                                                </li>-->
+                    </ul>
+                </nav>
+            </div>
+            <!-- end navigation -->
+        </div>
+    </div>
+</header>
+<!-- end header -->

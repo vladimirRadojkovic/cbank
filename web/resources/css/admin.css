@@ -1,0 +1,52 @@
+/*stilizacija administrator*/
+#adminTop h2{margin: 0;padding: 10px;}
+#adminTop{
+    height: 50px;
+    text-align: center;
+    background: #1B8DBA;
+    background: -moz-linear-gradient(#1B8DBA, #48ADD5);
+    background: -o-linear-gradient(#1B8DBA, #48ADD5);
+    background: -webkit-linear-gradient(#1B8DBA, #48ADD5);
+}
+body {
+    background:url(../images/p.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.korisnikreg{
+    overflow: hidden;
+    box-shadow: 0 5px 15px 4px rgba(0,0,0,.5);
+    padding: 10px;
+    width: 1300px;
+    background-color: #e9e9e9;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#plavalinija {
+    border-color:#1B8DBA;
+    margin: 10px;
+    clear:both;
+}
+#welcome{width: 400px;float: left;}
+#lastlogin{float: left;width: 400px;}
+#exit{ float:right;}
+#adminLogout:hover {color:#771e7e;cursor:pointer;}
+#adminLogout{
+    margin-top: 3px;
+    width: 91px;
+    padding:5px 15px;
+    background-color: #e9e9e9;
+    font-weight: 700;
+    font-size: 14px;
+    color: #1B8DBA;
+    color: -moz-linear-gradient(#1B8DBA, #48ADD5);
+    color: -o-linear-gradient(#1B8DBA, #48ADD5);
+    color: -webkit-linear-gradient(#1B8DBA, #48ADD5);
+    border:1px solid #1B8DBA;
+    border-radius: 3px;
+}
+/*kraj stilizacija administrator*/
+

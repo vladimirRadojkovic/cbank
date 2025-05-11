@@ -5,7 +5,7 @@
  */
 package com.mybank.model;
 
-import jakarta.validation.constraints.Size;
+import javax.validation.constraints.Size;
 import org.springframework.format.annotation.NumberFormat;
 
 /**

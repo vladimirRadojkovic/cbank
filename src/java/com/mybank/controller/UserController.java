@@ -8,7 +8,7 @@ package com.mybank.controller;
 import com.mybank.model.BrisanjeKorisnikaModel;
 import com.mybank.model.UnosKorisnikaModel;
 import com.mybank.service.UserService;
-import javax.validation.Valid;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.*;
 import org.springframework.validation.BindingResult;

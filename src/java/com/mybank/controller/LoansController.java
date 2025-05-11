@@ -11,7 +11,7 @@ import com.mybank.model.KreditiModel;
 import com.mybank.service.KreditiServis;
 import com.mybank.service.UserService;
 import java.util.List;
-import javax.validation.Valid;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.User;

@@ -12,7 +12,7 @@ import com.mybank.service.TransferService;
 import com.mybank.service.UserService;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import javax.validation.Valid;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.User;

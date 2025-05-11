@@ -8,7 +8,7 @@ package com.mybank.controller;
 import com.mybank.model.BrisanjeKarticeModel;
 import com.mybank.model.KarticaModel;
 import com.mybank.service.CardService;
-import javax.validation.Valid;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.*;
 import org.springframework.validation.BindingResult;

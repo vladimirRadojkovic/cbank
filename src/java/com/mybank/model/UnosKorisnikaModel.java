@@ -1,7 +1,7 @@
 package com.mybank.model;
 
-import javax.validation.constraints.Size;
-import org.hibernate.validator.constraints.Email;
+import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.Email;
 import org.springframework.format.annotation.NumberFormat;
 
 public class UnosKorisnikaModel {

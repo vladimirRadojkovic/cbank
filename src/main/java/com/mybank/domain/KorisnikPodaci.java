@@ -15,6 +15,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Parameter;
+import javax.persistence.Column;
 
 /**
  *
@@ -40,6 +41,7 @@ public class KorisnikPodaci implements Serializable {
             strategy = "foreign",
             parameters = @Parameter(name = "property", value = "korisnik"))
     @GeneratedValue(generator = "custom")
+    @Column(name = "korisnik")
     private String korisnickoIme;
     private String ime;
     private String prezime;

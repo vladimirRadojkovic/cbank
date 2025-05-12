@@ -16,6 +16,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.FetchType;
 
 /**
  *
@@ -43,13 +45,14 @@ public class Kartica implements Serializable {
     private int saldo;
     private String tekuciRacun;
 
-    @OneToMany(mappedBy = "idKartice", cascade = CascadeType.REMOVE)
+    @OneToMany(mappedBy = "idKartice", cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
     private Set<Transferi> transferi;
 
     @OneToMany(mappedBy = "idKartice", cascade = CascadeType.REMOVE)
     private Set<Placanja> placanja;
 
     @ManyToOne
+    @JoinColumn(name = "korisnickoIme")
     private Korisnik korisnickoIme;
 
     /**

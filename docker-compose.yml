@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+  # MySQL Database
+  mysql:
+    image: mysql:8.0
+    container_name: cbank-mysql
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: bank
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ./sql:/docker-entrypoint-initdb.d
+    networks:
+      - cbank-network
+
+  # Tomcat Application Server
+  webapp:
+    build: .
+    container_name: cbank-webapp
+    depends_on:
+      - mysql
+    ports:
+      - "8080:8080"
+    networks:
+      - cbank-network
+
+networks:
+  cbank-network:
+    driver: bridge
+
+volumes:
+  mysql-data: 

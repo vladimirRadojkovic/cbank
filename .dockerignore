@@ -1,0 +1,28 @@
+# Git
+.git
+.gitignore
+
+# Compiled class files
+*.class
+
+# Build directories
+/build/
+/out/
+/bin/
+/target/
+!/target/cbank.war
+
+# IDE files
+.idea/
+.vscode/
+*.iml
+*.iws
+*.ipr
+nbproject/
+
+# Logs
+*.log
+
+# OS specific files
+.DS_Store
+Thumbs.db 

@@ -1,107 +1,88 @@
-# CBank Web Application
+# C-Bank Banking Application
 
-## Overview
+A Java-based banking application that has been migrated from NetBeans/Ant to Maven and Docker.
 
-This is a banking web application built with Spring Framework, Hibernate, and MySQL. The project was originally built with NetBeans and Ant, but has been migrated to Maven for better dependency management and build process.
-
-## Project Structure
-
-- `src/java`: Java source files
-- `src/conf`: Configuration files
-- `web`: Web resources (HTML, JSP, CSS, JS, etc.)
-- `lib`: External libraries (now managed by Maven)
-
-## Technologies Used
-
-- Spring Framework 4.0.0
-- Spring Security 3.2.3
-- Hibernate 4.3.5
-- MySQL Connector
-- Servlet API 3.1.0
-- JSP/JSTL
-- Logback 1.1.2
-
-## Building the Project
+## Getting Started
 
 ### Prerequisites
 
-- Java JDK 8+
-- Maven 3.6+
-- MySQL Database
+- Java 8 or higher
+- Maven 3.6 or higher
+- Docker and Docker Compose
+- Git
 
-### Maven Build
+### Clone the Repository
 
 ```bash
-# Clone the repository
-git clone <repository-url>
+git clone https://github.com/yourusername/cbank.git
 cd cbank
+```
 
-# Build the project
+### Build the Application
+
+```bash
 mvn clean package
-
-# The WAR file will be generated in the target directory
-# target/cbank.war
 ```
 
-### Running the Application
-
-#### Using Embedded Jetty (for development)
-
-The project includes the Jetty Maven plugin for easy development:
+### Run with Docker Compose
 
 ```bash
-# Run with Jetty
-mvn jetty:run
-
-# Access the application at http://localhost:8080/cbank
+docker-compose up -d
 ```
 
-#### Using External Server
+This will start:
+- MySQL database container
+- Tomcat web container with the deployed application
 
-Deploy the generated WAR file to a Servlet container like Tomcat, Jetty, or GlassFish.
+### Access the Application
 
-```bash
-# Example for Tomcat (assuming Tomcat is installed and in your PATH)
-cp target/cbank.war $TOMCAT_HOME/webapps/
+Open your browser and navigate to:
+```
+http://localhost:8080/
 ```
 
-## Database Setup and Configuration
+## Test Accounts
 
-### Initial Setup
-* Create a "bank" database in MySQL
-* Manually insert at least one record in the "Korisnik" table
-* In the "KorisnikRoles" table, add at least one role e.g., "ROLE_USER". If you want to be an admin as well, add both "ROLE_ADMIN" and "ROLE_USER"
-* Edit the database connection settings (see below)
+The application comes with predefined users for testing:
 
-### Database Configuration
+| Username | Password  | Role(s)       |
+|----------|-----------|---------------|
+| admin    | admin123  | ADMIN         |
+| user     | pass123   | USER          |
+| dualuser | dual123   | USER and ADMIN |
 
-The database connection is configured in `web/WEB-INF/applicationContext.xml`. Update this file with your database connection details before deploying the application:
+## Features
 
-```xml
-<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
-    <property name="driverClassName" value="com.mysql.jdbc.Driver" />
-    <property name="url" value="jdbc:mysql://localhost:3306/bank" />
-    <property name="username" value="your_username" />
-    <property name="password" value="your_password" />
-</bean>
-```
+- User authentication and role-based authorization
+- Account management
+- Transaction history
+- Money transfers
+- Credit management
+- Administration panel
 
-## Migration from Ant to Maven
+## Application Structure
 
-This project was originally built with Ant. The migration to Maven involved:
+- Maven-based project structure
+- Spring MVC for web layer
+- Spring Security for authentication and authorization
+- Hibernate ORM for database access
+- MySQL for data storage
+- Tomcat for application server
+- Docker for containerization
 
-1. Creating a Maven `pom.xml` file
-2. Resolving dependencies with proper Maven coordinates
-3. Adjusting the project structure to Maven conventions
-4. Configuring the Maven War plugin to use the existing web resources
+## Technologies Used
 
-### Key Maven Configuration
+- Java 8
+- Spring Framework 4.3.2
+- Spring Security 4.1.3
+- Hibernate 5.2.1
+- MySQL 8.0
+- Maven 3.8.6
+- Tomcat 9.0
+- Docker & Docker Compose
 
-- The project uses the standard Maven WAR packaging
-- The `maven-war-plugin` is configured to use the existing `web` directory for web resources
-- All dependencies are now managed in the `pom.xml` file instead of JARs in the `lib` directory
-- Embedded Jetty server for development and testing
+## Notes
 
-## License
-
-[Your License Information]
+- This application has been migrated from a legacy NetBeans/Ant project to a modern Maven structure
+- XML configurations have been replaced with Java-based configurations
+- Transaction management has been updated to use Spring's declarative transactions

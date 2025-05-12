@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/" reloadable="true">
+  <!-- Database Resource -->
+  <Resource name="jdbc/bankDB" 
+            auth="Container" 
+            type="javax.sql.DataSource"
+            maxActive="100" 
+            maxIdle="30" 
+            maxWait="10000"
+            username="root" 
+            password="password" 
+            driverClassName="com.mysql.cj.jdbc.Driver"
+            url="jdbc:mysql://mysql:3306/bank?serverTimezone=UTC&amp;useSSL=false&amp;allowPublicKeyRetrieval=true"
+            validationQuery="SELECT 1"
+            testOnBorrow="true" />
+</Context> 
